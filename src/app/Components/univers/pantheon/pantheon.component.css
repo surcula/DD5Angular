@@ -13,4 +13,7 @@ p {
 
 .containerTable {
   max-width: 750px;
+  max-height: 400px; /* Définir la hauteur maximale du tableau */
+  overflow-y: auto; /* Ajouter une scrollbar verticale */
+  display: block; /* Assurer que le tableau se comporte comme un bloc pour permettre le défilement */
 }

@@ -20,6 +20,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 import { NavbarUniversComponent } from './Components/univers/navbar-univers/navbar-univers.component';
 import { PantheonComponent } from './Components/univers/pantheon/pantheon.component';
+import { PlansComponent } from './Components/univers/plans/plans.component';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { PantheonComponent } from './Components/univers/pantheon/pantheon.compon
     BuilderComponent,
     NavbarUniversComponent,
     PantheonComponent,
+    PlansComponent,
     
     
     

@@ -5,12 +5,17 @@ import { AideDeJeuComponent } from './Components/aide-de-jeu/aide-de-jeu.compone
 import { ReglesComponent } from './Components/regles/regles.component';
 import { BuilderComponent } from './Components/builder/builder.component';
 import { PantheonComponent } from './Components/univers/pantheon/pantheon.component';
+import { PlansComponent } from './Components/univers/plans/plans.component';
 
 const routes: Routes = [
   {
     path: 'univers',
     component: UniversComponent,
-    children: [{ path: 'pantheon', component: PantheonComponent }],
+    children: [
+      { path: 'plans', component: PlansComponent },
+      { path: 'pantheon', component: PantheonComponent },
+
+    ],
   },
   { path: 'aides-de-jeu', component: AideDeJeuComponent, children: [] },
   { path: 'regles', component: ReglesComponent, children: [] },
