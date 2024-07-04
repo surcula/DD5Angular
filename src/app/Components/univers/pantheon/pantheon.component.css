@@ -1,0 +1,16 @@
+.container {
+  overflow: hidden; /* Assure que le conteneur englobe son contenu flottant */
+}
+
+.right-image {
+  float: right; /* Positionne l'image à droite du texte */
+  margin: 0 0 1em 1em; /* Ajoute de l'espace autour de l'image */
+}
+
+p {
+  text-align: justify; /* Justifie le texte pour un alignement propre */
+}
+
+.containerTable {
+  max-width: 750px;
+}

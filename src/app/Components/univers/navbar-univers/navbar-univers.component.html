@@ -1,0 +1,9 @@
+<ul class="nav flex-column">
+  @for ( univer of listUnivers; track $index) {
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="univer.routerLink">{{
+      univer.label
+    }}</a>
+  </li>
+  }
+</ul>

@@ -1,0 +1,38 @@
+.navbar {
+    position: relative; /* Position relative pour positionner les pseudo-éléments */
+    background-color: black; /* Couleur de fond de la navbar */
+    overflow: hidden; /* Pour cacher les parties des pseudo-éléments qui dépassent */
+  }
+  
+  .navbar::before,
+  .navbar::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: red; /* Couleur des lignes rouges */
+    top: 0;
+    z-index: 1; /* Position au-dessus du contenu de la navbar */
+  }
+  
+  .navbar::before {
+    transform: rotate(-45deg); /* Rotation pour la ligne diagonale vers la gauche */
+  }
+  
+  .navbar::after {
+    transform: rotate(45deg); /* Rotation pour la ligne diagonale vers la droite */
+  }
+  
+  .navbar-brand {
+    position: relative; /* Assurer que le texte reste au-dessus des lignes */
+    z-index: 2; /* Position au-dessus des pseudo-éléments */
+  }
+  
+  .d20-icon {
+    position: absolute;
+    top: 0;
+    right: -30px; /* Ajustez la position selon vos besoins */
+    font-size: 1.5rem; /* Ajustez la taille de l'icône selon vos besoins */
+    color: white; /* Couleur de l'icône */
+  }
+  
