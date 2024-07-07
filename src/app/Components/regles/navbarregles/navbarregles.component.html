@@ -1,0 +1,18 @@
+<ul class="nav flex-column">
+  @for ( univer of listRegles; track $index) {
+  <li class="nav-item">
+    <a class="nav-link active" [routerLink]="univer.routerLink">{{
+      univer.label
+    }}</a>
+    @for(child of univer.children ; track $index){
+    <ul>
+      <li>
+        <a class="nav-link active" [routerLink]="child.routerlink">{{
+          child.label
+        }}</a>
+      </li>
+    </ul>
+    }
+  </li>
+  }
+</ul>

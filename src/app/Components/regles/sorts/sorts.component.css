@@ -1,0 +1,97 @@
+/* Styles for the container */
+.containerFilter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #f0f0f0;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Styles for the filter list container */
+.filter-list-container {
+  flex: 1 1 300px; /* Flexible width, minimum width 300px */
+}
+
+.filter-list-container label {
+  display: block;
+  margin-bottom: 8px;
+  font-size: 16px;
+}
+
+.filter-list-container input[type="checkbox"] {
+  margin-right: 8px;
+  transform: translateY(2px);
+}
+
+/* Styles for the level filter */
+.level-filter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 16px;
+}
+
+.level-filter label {
+  font-weight: bold;
+}
+
+.level-filter input[type="number"] {
+  padding: 8px;
+  width: 80px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.level-filter button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.level-filter button:hover {
+  background-color: #0056b3;
+}
+
+/* Styles for the table */
+.table {
+  width: 100%;
+  margin-top: 20px;
+  border-collapse: collapse;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.table th,
+.table td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.table th {
+  background-color: #343a40;
+  color: #fff;
+  cursor: pointer;
+}
+
+.table th i {
+  margin-left: 5px;
+}
+
+.table th:hover {
+  background-color: #454d55;
+}
+
+.table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.table tbody tr:hover {
+  background-color: #f0f0f0;
+}

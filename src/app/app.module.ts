@@ -17,11 +17,20 @@ import { UniversComponent } from './Components/univers/univers.component';
 import { AideDeJeuComponent } from './Components/aide-de-jeu/aide-de-jeu.component';
 import { BuilderComponent } from './Components/builder/builder.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
+import {
+  NgbPaginationModule,
+  NgbAlertModule,
+} from '@ng-bootstrap/ng-bootstrap';
 import { NavbarUniversComponent } from './Components/univers/navbar-univers/navbar-univers.component';
 import { PantheonComponent } from './Components/univers/pantheon/pantheon.component';
 import { PlansComponent } from './Components/univers/plans/plans.component';
-
+import { HomeComponent } from './Components/home/home.component';
+import { CarousselComponent } from './Components/home/caroussel/caroussel.component';
+import { NavbaraideComponent } from './Components/aide-de-jeu/navbaraide/navbaraide.component';
+import { NavbarreglesComponent } from './Components/regles/navbarregles/navbarregles.component';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CreationComponent } from './Components/regles/creation/creation.component';
 
 @NgModule({
   declarations: [
@@ -43,19 +52,23 @@ import { PlansComponent } from './Components/univers/plans/plans.component';
     NavbarUniversComponent,
     PantheonComponent,
     PlansComponent,
-    
-    
-    
+    HomeComponent,
+    CarousselComponent,
+    NavbaraideComponent,
+    NavbarreglesComponent,
+    CreationComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgbModule,
-    NgbPaginationModule, 
-    NgbAlertModule   
-    
+    NgbPaginationModule,
+    NgbAlertModule,
+    HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

@@ -1,0 +1,11 @@
+.card-img-top1 {
+  width: 50%;
+  height: auto; /* Conserve les proportions */
+}
+.card-img-top2 {
+  margin-top: 2em;
+  margin-left: 1.5em;
+  margin-bottom: 2.6em;
+  width: 90%;
+  height: auto; /* Conserve les proportions */
+}

@@ -1,1 +1,68 @@
-<p>sorts works!</p>
+@if(listSchool.length > 0){
+<div class="containerFilter">
+  <div class="filter-list-container">
+    @for(school of listSchool; track $index){
+    <label>
+      <input
+        type="checkbox"
+        (ngModel)="(selectedSchoolsMap[school])"
+        (change)="toggleFilter(school)"
+      />
+      {{ school }}
+    </label>
+    }
+  </div>
+
+  <div class="level-filter">
+    <label for="levelMin">Niveau min:</label>
+    <input id="levelMin" type="number" [(ngModel)]="levelMin" />
+    <label for="levelMax">Niveau max:</label>
+    <input id="levelMax" type="number" [(ngModel)]="levelMax" />
+    <button (click)="filterByLevelRange()">Filtrer</button>
+    <button (click)="clearFilters()">Effacer</button>
+  </div>
+  <div class="filterSource"></div>
+</div>
+
+<table class="table">
+  <thead class="thead-dark">
+    <tr>
+      <th (click)="setSortBy('name')">
+        Sort <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th (click)="setSortBy('level')">
+        Niveau <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th (click)="setSortBy('school')">
+        École <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th (click)="setSortBy('castingTime')">
+        Incantation <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th (click)="setSortBy('range')">
+        Portée <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th (click)="setSortBy('components')">
+        V,S,M <i class="fa fa-sort" aria-hidden="true"></i>
+      </th>
+      <th>Source</th>
+    </tr>
+  </thead>
+  <tbody>
+    @for ( spell of filteredSpells; track $index) {
+    <tr>
+      <td>{{ spell.name }}</td>
+      <td>{{ spell.level }}</td>
+      <td>{{ spell.school }}</td>
+      <td>{{ spell.castingTime }}</td>
+      <td>{{ spell.range }}</td>
+      <td>{{ spell.components }}</td>
+      <td>{{ spell.source.name }}</td>
+    </tr>
+    }
+  </tbody>
+</table>
+}
+@else {
+    <p>Désolé mais le service n'est pas disponible pour le moment. Veuillez revenir plus tard !</p>
+}
