@@ -1,7 +1,7 @@
 import { Skill } from './Skill';
 import { Sources } from './Sources';
 
-export interface Test {
+export interface listClass {
   classes: Classes;
   skills: Skill[];
 }
@@ -18,4 +18,5 @@ export interface Classes {
   dv: number;
   nbSkill: number;
   source: Sources;
+  skills:Skill[]
 }

@@ -1,38 +1,22 @@
+.caracteristiques-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
 .caracteristique {
-  background-color: #f4f4f4;
-  padding: 10px;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  margin-bottom: 20px; /* Espacement entre les caractéristiques */
+  background-color: #f8f9fa; /* Background color for the rectangle */
+  border: 1px solid #dee2e6; /* Border for the rectangle */
+  width: calc(10.333% - 10px); /* Adjust the width according to your layout */
+  height: calc(17% - 10px);
+  box-sizing: border-box;
 }
 
 .caracteristique h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  color: #333;
+  font-size: 1.25rem;
+  cursor: pointer;
+  text-align: center;
 }
-
-.details p {
-  margin: 5px 0;
-}
-
-.details p strong {
-  font-weight: bold;
-}
-
-.details p:last-child {
-  margin-bottom: 0;
-}
-.caracteristiques-container {
-  display: grid;
-  gap: 20px;
-  grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales par défaut */
-
-  /* Ajout de Media Queries pour ajuster le nombre de colonnes en fonction de la largeur de l'écran */
-  @media (max-width: 1200px) {
-    grid-template-columns: repeat(
-      2,
-      1fr
-    ); /* Passer à deux colonnes à partir de 1200px de largeur */
-  }
+.caracteristique h3.selected {
+  background-color: rgb(158, 191, 237);
 }

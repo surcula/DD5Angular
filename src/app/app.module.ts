@@ -31,6 +31,22 @@ import { NavbarreglesComponent } from './Components/regles/navbarregles/navbarre
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreationComponent } from './Components/regles/creation/creation.component';
+import { BuilderHomeComponent } from './Components/builder/builder-home/builder-home.component';
+import { BuilderRaceComponent } from './Components/builder/builder-race/builder-race.component';
+import { BuilderclassComponent } from './Components/builder/builderclass/builderclass.component';
+import {
+  FaIconLibrary,
+  FontAwesomeModule,
+} from '@fortawesome/angular-fontawesome';
+import { faDragon, faStar as fasStar } from '@fortawesome/free-solid-svg-icons';
+import {
+  faHome,
+  faDiceD20,
+  faCircleLeft,
+  faCircleRight,
+} from '@fortawesome/free-solid-svg-icons';
+import { BuilderHistoryComponent } from './Components/builder/builder-history/builder-history.component';
+import { BuilderCaracsComponent } from './Components/builder/builder-caracs/builder-caracs.component';
 
 @NgModule({
   declarations: [
@@ -57,6 +73,11 @@ import { CreationComponent } from './Components/regles/creation/creation.compone
     NavbaraideComponent,
     NavbarreglesComponent,
     CreationComponent,
+    BuilderHomeComponent,
+    BuilderRaceComponent,
+    BuilderclassComponent,
+    BuilderHistoryComponent,
+    BuilderCaracsComponent,
   ],
   imports: [
     BrowserModule,
@@ -67,8 +88,14 @@ import { CreationComponent } from './Components/regles/creation/creation.compone
     HttpClientModule,
     ReactiveFormsModule,
     FormsModule,
+    FontAwesomeModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+  constructor(library: FaIconLibrary) {
+    // Add multiple icons to the library
+    library.addIcons(faHome, faCircleLeft, faCircleRight, faDragon, faDiceD20);
+  }
+}

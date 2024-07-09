@@ -11,6 +11,11 @@ import { RacesComponent } from './Components/regles/races/races.component';
 import { ClassesComponent } from './Components/regles/classes/classes.component';
 import { SortsComponent } from './Components/regles/sorts/sorts.component';
 import { CreationComponent } from './Components/regles/creation/creation.component';
+import { BuilderRaceComponent } from './Components/builder/builder-race/builder-race.component';
+import { BuilderclassComponent } from './Components/builder/builderclass/builderclass.component';
+import { BuilderHomeComponent } from './Components/builder/builder-home/builder-home.component';
+import { BuilderHistoryComponent } from './Components/builder/builder-history/builder-history.component';
+import { BuilderCaracsComponent } from './Components/builder/builder-caracs/builder-caracs.component';
 
 const routes: Routes = [
   {path : "", component : HomeComponent},
@@ -29,7 +34,13 @@ const routes: Routes = [
     { path: 'sorts', component: SortsComponent },
     { path: 'creation', component: CreationComponent },
   ] },
-  { path: 'builder', component: BuilderComponent, children: [] },
+  { path: 'builder', component: BuilderComponent, children: [
+    { path: 'home', component: BuilderHomeComponent },
+    { path: 'race', component: BuilderRaceComponent },
+    { path: 'class', component: BuilderclassComponent },
+    { path: 'history', component: BuilderHistoryComponent },
+    { path: 'caracs', component: BuilderCaracsComponent },
+  ] },
 ];
 
 @NgModule({

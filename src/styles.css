@@ -8,3 +8,6 @@ p {
 * {
   font-family: Garamond;
 }
+#favicon {
+  display: none; /* Masquer l'icône fa-icon, car elle n'a pas besoin d'être visible */
+}

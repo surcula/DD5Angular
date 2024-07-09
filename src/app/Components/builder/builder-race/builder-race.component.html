@@ -1,0 +1,67 @@
+<h3>Choix de la race <i class="fas fa-home"></i></h3>
+
+<div class="row">
+    <div class="col-12">
+      <nav class="navigation d-flex justify-content-center align-items-center">
+        <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/home"></fa-icon>
+        <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/class"></fa-icon>
+      </nav>
+    </div>
+  </div>
+
+<section class="class col-12 row">
+  <div class="caracteristiques-container col-8">
+    @if(IsLoaded){ @for(entity of listRaces;track $index){
+    <div class="caracteristique">
+      <h3
+        [class.selected]="entity.race === raceFocus"
+        (click)="select(entity.race, entity.languages)"
+      >
+        {{ entity.race.race }}
+      </h3>
+    </div>
+    } }@else {
+    <p>
+      Désolé mais le character builder ne fonctionne pas pour le moment,
+      veuillez revenir plus tard.
+    </p>
+    }
+  </div>
+  <div class="col-4">
+    <h3>{{raceFocus.race}}</h3>
+    @if(raceFocus != undefined){
+    <div class="details">
+      @if(raceFocus.strenghtBonus > 0){
+      <p><strong>Bonus de force :</strong> +{{ raceFocus.strenghtBonus }}</p>
+      } @if(raceFocus.dexterityBonus > 0){
+      <p>
+        <strong>Bonus de dextérité :</strong> +{{ raceFocus.dexterityBonus }}
+      </p>
+      } @if(raceFocus.intelligenceBonus > 0){
+      <p>
+        <strong>Bonus d'intelligence :</strong>
+        +{{ raceFocus.intelligenceBonus }}
+      </p>
+      } @if(raceFocus.wisdomBonus > 0){
+      <p><strong>Bonus de sagesse :</strong> +{{ raceFocus.wisdomBonus }}</p>
+
+      } @if(raceFocus.charismasBonus > 0){
+      <p>
+        <strong>Bonus de charisme :</strong> +{{ raceFocus.charismasBonus }}
+      </p>
+      } @if(raceFocus.constitutionBonus > 0){
+      <p>
+        <strong>Bonus de constitution :</strong>
+        +{{ raceFocus.constitutionBonus }}
+      </p>
+      }
+      <p><strong>Vitesse : </strong> {{ raceFocus.speed }}</p>
+      <p><strong>Taille : </strong> {{ raceFocus.size }}</p>
+      @for(langue of raceFocus.langue; track $index){
+      <p><strong>Langue : </strong> {{ langue.language }}</p>
+
+      }
+    </div>
+    }
+  </div>
+</section>
