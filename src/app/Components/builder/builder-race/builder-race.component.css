@@ -7,8 +7,8 @@
 .caracteristique {
   background-color: #f8f9fa; /* Background color for the rectangle */
   border: 1px solid #dee2e6; /* Border for the rectangle */
-  width: calc(10.333% - 10px); /* Adjust the width according to your layout */
-  height: calc(17% - 10px);
+  width: 100px;/*calc(10.333% - 10px);  Adjust the width according to your layout */
+  height: 100px;/*calc(17% - 10px);*/
   box-sizing: border-box;
 }
 
@@ -64,4 +64,9 @@
 .raceSelected h3 {
   border-bottom: 1px dashed black; /* Ligne pointillée noire en dessous du h3 */
   padding-bottom: 5px; /* Ajoute un peu d'espace entre le texte et la ligne */
+}
+.class{
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
 }

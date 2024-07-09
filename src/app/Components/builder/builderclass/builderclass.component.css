@@ -7,7 +7,7 @@
 .caracteristique {
   background-color: #f8f9fa; /* Background color for the rectangle */
   border: 1px solid #dee2e6; /* Border for the rectangle */
-  width: 9%; /* Adjust the width to fit two elements per row with a gap */
+  width: 100px; /* Adjust the width to fit two elements per row with a gap */
   height: 80px; /* Set a fixed height for the rectangles */
   box-sizing: border-box;
   display: flex;
