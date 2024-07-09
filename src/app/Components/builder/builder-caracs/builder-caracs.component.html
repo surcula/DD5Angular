@@ -1,11 +1,88 @@
-<h3>Choix des caractéristiques </h3>
+<h3>Choix des caractéristiques</h3>
 
 <div class="row">
-    <div class="col-12">
-      <nav class="navigation d-flex justify-content-center align-items-center">
-        <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/history"></fa-icon>
-        <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/caracs"></fa-icon>
-      </nav>
-    </div>
+  <div class="col-12">
+    <nav class="navigation d-flex justify-content-center align-items-center">
+      <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/history"></fa-icon>
+      <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/race"></fa-icon>
+    </nav>
   </div>
-  
+</div>
+
+<section class="niveau-section row">
+  <div class="niveau-container col-md-6 col-lg-4">
+    <table class="niveau-table table-centered">
+      <tr>
+        <td class="label">Niveau :</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('niveau')">-</button></td>
+        <td class="value">{{niveau}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('niveau')">+</button></td>
+      </tr>
+    </table>
+  </div>
+</section>
+
+<section class="characteristics-section row">
+  <div class="characteristics-container col-8">
+    <table class="characteristics-table">
+      <thead>
+        <th></th>
+        <th></th>
+        <th>Valeur Brute</th>
+        <th></th>
+        <th>Bonus Racial</th>
+        <th>Valeur Finale</th>
+      </thead>
+      <tr>
+        <td>Force</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('force')">-</button></td>
+        <td>{{characteristics['force']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('force')">+</button></td>
+      </tr>
+      <tr>
+        <td>Dextérité</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('dexterite')">-</button></td>
+        <td>{{characteristics['dexterite']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('dexterite')">+</button></td>
+      </tr>
+      <tr>
+        <td>Constitution</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('constitution')">-</button></td>
+        <td>{{characteristics['constitution']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('constitution')">+</button></td>
+      </tr>
+      <tr>
+        <td>Intelligence</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('intelligence')">-</button></td>
+        <td>{{characteristics['intelligence']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('intelligence')">+</button></td>
+      </tr>
+      <tr>
+        <td>Sagesse</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('sagesse')">-</button></td>
+        <td>{{characteristics['sagesse']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('sagesse')">+</button></td>
+      </tr>
+      <tr>
+        <td>Charisme</td>
+        <td><button class="btn btn-primary btn-sm" (click)="diminuer('charisme')">-</button></td>
+        <td>{{characteristics['charisme']}}</td>
+        <td><button class="btn btn-primary btn-sm" (click)="augmenter('charisme')">+</button></td>
+      </tr>
+    </table>
+  </div>
+  <div class="carac-info col-4">
+    <p>
+      Les caractéristiques peuvent être déterminées de deux manières : 
+      </p>
+      <p>1)
+      Répartition de 27 points suivant le barème des règles (max 15 pour une
+      caractéristique). Le nombre de points consommés est indiqué en bas. Une
+      répartition typique est : 15 - 14 - 13 - 12 - 10 - 8 ou 
+      </p>
+      <p>2) Tirez 6 fois 4d6,
+      gardez les 3 meilleurs d6 à chaque fois, et reportez les scores dans l'ordre
+      de votre choix. Votre tirage donne :
+    </p>
+  </div>
+</section>

@@ -60,3 +60,8 @@
   background-color: #5a6268;
   border-color: #5a6268;
 }
+
+.raceSelected h3 {
+  border-bottom: 1px dashed black; /* Ligne pointillée noire en dessous du h3 */
+  padding-bottom: 5px; /* Ajoute un peu d'espace entre le texte et la ligne */
+}

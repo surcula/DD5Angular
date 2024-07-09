@@ -27,9 +27,10 @@
     </p>
     }
   </div>
-  <div class="col-4">
-    <h3>{{raceFocus.race}}</h3>
+  <div class="raceSelected col-4">
+    
     @if(raceFocus != undefined){
+      <h3>{{raceFocus.race}}</h3>
     <div class="details">
       @if(raceFocus.strenghtBonus > 0){
       <p><strong>Bonus de force :</strong> +{{ raceFocus.strenghtBonus }}</p>

@@ -16,28 +16,10 @@
     </nav>
   </div>
 </div>
-<h3>Choix de la race <i class="fas fa-home"></i></h3>
 
-<div class="row">
-  <div class="col-12">
-    <nav class="navigation d-flex justify-content-center align-items-center">
-      <fa-icon
-        [icon]="['fas', 'circle-left']"
-        class="fa-2x mx-3"
-        routerLink="/builder/home"
-      ></fa-icon>
-      <fa-icon
-        [icon]="['fas', 'circle-right']"
-        class="fa-2x mx-3"
-        routerLink="/builder/class"
-      ></fa-icon>
-    </nav>
-  </div>
-</div>
-
-<section class="class col-12 row">
-  <div class="caracteristiques-container col-8">
-    @if(IsLoaded){ @for(entity of listClass;track $index){
+<section class="class row">
+  <div class="caracteristiques-container col-7">
+    @if(IsLoaded) { @for(entity of listClass; track $index) {
     <div class="caracteristique">
       <h3
         [class.selected]="entity.classes === classFocus"
@@ -46,12 +28,28 @@
         {{ entity.classes.class }}
       </h3>
     </div>
-    } }@else {
+    } } @else {
     <p>
       Désolé mais le character builder ne fonctionne pas pour le moment,
       veuillez revenir plus tard.
     </p>
     }
   </div>
-  <div class="col-4"></div>
+  <div class="classSelected col-5">
+    @if(classFocus != undefined) {
+    <h3>{{ classFocus.class }}</h3>
+    <p><strong>Dés de vie : </strong> 1D{{ classFocus.dv }}</p>
+    <p><strong>Nombre de skill(s) : </strong> {{ classFocus.skills.length }}</p>
+    @if(classFocus.skills.length > 0) {
+    
+      @for(skill of classFocus.skills; track $index) {
+      
+        -{{ skill.skill }}
+      
+      }
+
+  
+    
+    } }
+  </div>
 </section>

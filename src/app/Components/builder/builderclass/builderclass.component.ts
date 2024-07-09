@@ -15,15 +15,15 @@ export class BuilderclassComponent {
   
    
    constructor(private ClassesService : ClassesService) {
-    
+    this.load();
    }
 
   public load() {
-    this.loadRaces();
+    this.loadClasses();
   }
 
 
-  private loadRaces() {
+  private loadClasses() {
     this.ClassesService.GetAll().subscribe({
       next: (data: any) => {
         this.listClass = data;
