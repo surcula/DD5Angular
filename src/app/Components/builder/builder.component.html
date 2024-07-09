@@ -1,1 +1,20 @@
-<h1>Je vous aime !</h1>
+<h1>Character Builder</h1>
+
+@if(listClasses.length > 0){ @for(class of listClasses;track $index){ 1
+<div class="caracteristiques-container">
+  <div class="caracteristique">    
+    <h3>{{ class.classes.class }}</h3>
+    <div class="details">
+      @if(class.classes.strenghtBonus){ 5
+      <p><strong>Bonus de force :</strong> {{ class.classes.strenghtBonus }}</p>
+      }
+    </div>
+  </div>
+</div>
+
+} }@else {
+<p>
+  Désolé mais le builder character ne fonctionne pas pour le moment, veuillez
+  revenir plus tard.
+</p>
+}
