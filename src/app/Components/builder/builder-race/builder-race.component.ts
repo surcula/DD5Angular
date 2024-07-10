@@ -10,7 +10,7 @@ import { BuilderCharacterService } from '../../../Services/builderCharacter.serv
 
 })
 export class BuilderRaceComponent {
-  raceFocus!: Races;
+  raceFocus!: Races  ;
   listRaces: ListRaces[] = [];
   IsLoaded: boolean = false;
   constructor(
@@ -29,8 +29,11 @@ export class BuilderRaceComponent {
     this.racesService.GetAll().subscribe({
       next: (data: any) => {
         this.listRaces = data;
-        this.checkIfLoaded();
         this.raceFocus = this.listRaces[0].race
+        this.checkIfLoaded();
+        if(this.builderService.race != undefined){
+          this.raceFocus = this.builderService.race
+        }
       },
       error: (error) => {
         console.log(error);

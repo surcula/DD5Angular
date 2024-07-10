@@ -69,3 +69,8 @@
   border-bottom: 1px dashed black; /* Ligne pointillée noire en dessous du h3 */
   padding-bottom: 5px; /* Ajoute un peu d'espace entre le texte et la ligne */
 }
+.sourceDetail{
+  margin-top: 20px;
+  border-top: 1px dashed  #6c757d;
+  font-size: 13px;
+}

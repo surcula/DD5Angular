@@ -4,7 +4,7 @@
   <div class="col-12">
     <nav class="navigation d-flex justify-content-center align-items-center">
       <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/background"></fa-icon>
-      <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/race"></fa-icon>
+      <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/race" (click)="addCaracs()"></fa-icon>
     </nav>
   </div>
 </div>
@@ -40,7 +40,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('force')">+</button></td>
         @if(builderService.race.strenghtBonus > 0) {
           <td>+{{builderService.race.strenghtBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('force')}}</td>
       </tr>
       <tr>
         <td>Dextérité</td>
@@ -49,7 +50,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('dexterite')">+</button></td>
         @if(builderService.race.dexterityBonus > 0) {
           <td>+{{builderService.race.dexterityBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('dexterite')}}</td>
       </tr>
       <tr>
         <td>Constitution</td>
@@ -58,7 +60,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('constitution')">+</button></td>
         @if(builderService.race.constitutionBonus > 0) {
           <td>+{{builderService.race.constitutionBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('constitution')}}</td>
       </tr>
       <tr>
         <td>Intelligence</td>
@@ -67,7 +70,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('intelligence')">+</button></td>
         @if(builderService.race.intelligenceBonus > 0) {
           <td>+{{builderService.race.intelligenceBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('intelligence')}}</td>
       </tr>
       <tr>
         <td>Sagesse</td>
@@ -76,7 +80,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('sagesse')">+</button></td>
         @if(builderService.race.wisdomBonus > 0) {
           <td>+{{builderService.race.wisdomBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('sagesse')}}</td>
       </tr>
       <tr>
         <td>Charisme</td>
@@ -85,7 +90,8 @@
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('charisme')">+</button></td>
         @if(builderService.race.charismasBonus > 0) {
           <td>+{{builderService.race.charismasBonus}}</td>
-        }
+        }@else{<td></td>}
+        <td>{{getTotal('charisme')}}</td>
       </tr>
     </table>
   </div>
@@ -102,5 +108,12 @@
       gardez les 3 meilleurs d6 à chaque fois, et reportez les scores dans l'ordre
       de votre choix. Votre tirage donne :
     </p>
+    @for (item of dice; track $index) {
+      <p>{{$index + 1}}] (
+      @for (dic of item; track $index) {
+        {{dic}}
+      }
+      ) {{getSum(item)}}</p>
+    }
   </div>
 </section>

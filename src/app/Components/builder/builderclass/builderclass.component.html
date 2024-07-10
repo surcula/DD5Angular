@@ -23,7 +23,7 @@
     @if(IsLoaded) { @for(entity of listClass; track $index) {
     <div class="caracteristique">
       <h3
-        [class.selected]="entity.classes === classFocus"
+        [class.selected]="entity.classes.class === classFocus.class"
         (click)="select(entity.classes, entity.skills)"
       >
         {{ entity.classes.class }}
@@ -41,16 +41,12 @@
     <h3>{{ classFocus.class }}</h3>
     <p><strong>Dés de vie : </strong> 1D{{ classFocus.dv }}</p>
     <p><strong>Nombre de skill(s) : </strong> {{ classFocus.skills.length }}</p>
-    @if(classFocus.skills.length > 0) {
-    
-      @for(skill of classFocus.skills; track $index) {
-      
-        -{{ skill.skill }}
-      
-      }
+    @if(classFocus.skills.length > 0) { @for(skill of classFocus.skills; track
+    $index) { -{{ skill.skill }}
+    }
 
-  
-    
+    <p class="sourceDetail">{{ classFocus.source.source }}</p>
+
     } }
   </div>
 </section>

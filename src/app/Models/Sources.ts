@@ -1,4 +1,4 @@
 export interface Sources{
     id:number
-    name:string
+    source:string
 }

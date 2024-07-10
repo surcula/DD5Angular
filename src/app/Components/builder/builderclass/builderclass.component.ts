@@ -7,33 +7,36 @@ import { BuilderCharacterService } from '../../../Services/builderCharacter.serv
 @Component({
   selector: 'app-builderclass',
   templateUrl: './builderclass.component.html',
-  styleUrl: './builderclass.component.css'
+  styleUrl: './builderclass.component.css',
 })
 export class BuilderclassComponent {
-  classFocus!: Classes;
+  classFocus: Classes = {} as Classes;
   listClass: listClass[] = [];
   IsLoaded: boolean = false;
-  
-   
-   constructor(
-    private ClassesService : ClassesService,
-    private buildService : BuilderCharacterService
+
+  constructor(
+    private ClassesService: ClassesService,
+    public buildService: BuilderCharacterService
   ) {
+    this.classFocus.skills = []
     this.load();
-   }
+  }
 
   public load() {
     this.loadClasses();
   }
 
-
   private loadClasses() {
     this.ClassesService.GetAll().subscribe({
       next: (data: any) => {
         this.listClass = data;
+        this.classFocus = this.listClass[0].classes;
+        this.classFocus.skills = this.listClass[0].skills;
         this.checkIfLoaded();
-        this.classFocus = this.listClass[0].classes
-        this.classFocus.skills = this.listClass[0].skills
+        if (this.buildService.class.class != undefined) {
+          this.classFocus = this.buildService.class;
+          this.classFocus.skills = this.buildService.class.skills;
+        }
       },
       error: (error) => {
         console.log(error);
@@ -56,7 +59,7 @@ export class BuilderclassComponent {
     this.classFocus.skills = skills;
   }
 
-  addClass(){
+  addClass() {
     this.buildService.addClass(this.classFocus);
   }
 }
