@@ -4,6 +4,7 @@ import { Classes, listClass } from '../../Models/Classes';
 import { ListRaces, Races } from '../../Models/Races';
 import { RacesService } from '../../Services/races.service';
 import { Language } from '../../Models/Language';
+import { BuilderCharacterService } from '../../Services/builderCharacter.service';
 
 @Component({
   selector: 'app-builder',
@@ -12,4 +13,12 @@ import { Language } from '../../Models/Language';
 })
 export class BuilderComponent {
   
+  
+  /**
+   *
+   */
+  constructor(public builderService : BuilderCharacterService) {
+   
+    
+  }
 }

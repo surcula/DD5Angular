@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { BuilderCharacterService } from '../../../Services/builderCharacter.service';
 
 @Component({
   selector: 'app-builder-caracs',
@@ -16,6 +17,10 @@ export class BuilderCaracsComponent {
   };
   niveau:number = 1
 
+constructor( public builderService : BuilderCharacterService) {
+  
+  
+}
   diminuer(carac: keyof typeof this.characteristics) {
     if (carac ==="niveau"){
       if(this.niveau > 0) {

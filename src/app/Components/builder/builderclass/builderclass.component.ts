@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { Classes, listClass } from '../../../Models/Classes';
 import { ClassesService } from '../../../Services/classes.service';
 import { Skill } from '../../../Models/Skill';
+import { BuilderCharacterService } from '../../../Services/builderCharacter.service';
 
 @Component({
   selector: 'app-builderclass',
@@ -14,7 +15,10 @@ export class BuilderclassComponent {
   IsLoaded: boolean = false;
   
    
-   constructor(private ClassesService : ClassesService) {
+   constructor(
+    private ClassesService : ClassesService,
+    private buildService : BuilderCharacterService
+  ) {
     this.load();
    }
 
@@ -28,6 +32,8 @@ export class BuilderclassComponent {
       next: (data: any) => {
         this.listClass = data;
         this.checkIfLoaded();
+        this.classFocus = this.listClass[0].classes
+        this.classFocus.skills = this.listClass[0].skills
       },
       error: (error) => {
         console.log(error);
@@ -48,5 +54,9 @@ export class BuilderclassComponent {
   select(race: Classes, skills: Skill[]) {
     this.classFocus = race;
     this.classFocus.skills = skills;
+  }
+
+  addClass(){
+    this.buildService.addClass(this.classFocus);
   }
 }

@@ -45,8 +45,8 @@ import {
   faCircleLeft,
   faCircleRight,
 } from '@fortawesome/free-solid-svg-icons';
-import { BuilderHistoryComponent } from './Components/builder/builder-history/builder-history.component';
 import { BuilderCaracsComponent } from './Components/builder/builder-caracs/builder-caracs.component';
+import { BuilderBackgroundComponent } from './Components/builder/builder-background/builder-background.component';
 
 @NgModule({
   declarations: [
@@ -76,8 +76,8 @@ import { BuilderCaracsComponent } from './Components/builder/builder-caracs/buil
     BuilderHomeComponent,
     BuilderRaceComponent,
     BuilderclassComponent,
-    BuilderHistoryComponent,
     BuilderCaracsComponent,
+    BuilderBackgroundComponent,
   ],
   imports: [
     BrowserModule,

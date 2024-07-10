@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ListRaces, Races } from '../../../Models/Races';
 import { RacesService } from '../../../Services/races.service';
 import { Language } from '../../../Models/Language';
+import { BuilderCharacterService } from '../../../Services/builderCharacter.service';
 @Component({
   selector: 'app-builder-race',
   templateUrl: './builder-race.component.html',
@@ -13,7 +14,8 @@ export class BuilderRaceComponent {
   listRaces: ListRaces[] = [];
   IsLoaded: boolean = false;
   constructor(
-    private racesService: RacesService
+    private racesService: RacesService,
+    private builderService : BuilderCharacterService
   ) {
     this.load();
   }
@@ -28,6 +30,7 @@ export class BuilderRaceComponent {
       next: (data: any) => {
         this.listRaces = data;
         this.checkIfLoaded();
+        this.raceFocus = this.listRaces[0].race
       },
       error: (error) => {
         console.log(error);
@@ -49,5 +52,7 @@ export class BuilderRaceComponent {
     this.raceFocus = race;
     this.raceFocus.langue = langues;
   }
-
+  addBuilderService(){
+    this.builderService.addRace(this.raceFocus);
+  }
 }

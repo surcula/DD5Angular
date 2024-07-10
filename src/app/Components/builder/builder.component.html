@@ -1,1 +1,17 @@
-<router-outlet></router-outlet>
+<div class="coll-3">
+    @if(builderService.race.race != undefined){
+
+         <p> <strong>Race : </strong>{{builderService.race.race}}</p>
+    }
+    @if(builderService.class.class != undefined){
+
+        <p> <strong>Class : </strong>{{builderService.class.class}}</p>
+   }
+   @if(builderService.background.background != undefined){
+
+    <p> <strong>Background : </strong>{{builderService.background.background}}</p>
+}
+</div>
+<div class="col-9">
+    <router-outlet></router-outlet>
+</div>

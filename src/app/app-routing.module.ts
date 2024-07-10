@@ -14,8 +14,8 @@ import { CreationComponent } from './Components/regles/creation/creation.compone
 import { BuilderRaceComponent } from './Components/builder/builder-race/builder-race.component';
 import { BuilderclassComponent } from './Components/builder/builderclass/builderclass.component';
 import { BuilderHomeComponent } from './Components/builder/builder-home/builder-home.component';
-import { BuilderHistoryComponent } from './Components/builder/builder-history/builder-history.component';
 import { BuilderCaracsComponent } from './Components/builder/builder-caracs/builder-caracs.component';
+import { BuilderBackgroundComponent } from './Components/builder/builder-background/builder-background.component';
 
 const routes: Routes = [
   {path : "", component : HomeComponent},
@@ -38,7 +38,7 @@ const routes: Routes = [
     { path: 'home', component: BuilderHomeComponent },
     { path: 'race', component: BuilderRaceComponent },
     { path: 'class', component: BuilderclassComponent },
-    { path: 'history', component: BuilderHistoryComponent },
+    { path: 'background', component: BuilderBackgroundComponent },
     { path: 'caracs', component: BuilderCaracsComponent },
   ] },
 ];

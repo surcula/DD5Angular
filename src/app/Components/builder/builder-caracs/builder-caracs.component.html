@@ -3,7 +3,7 @@
 <div class="row">
   <div class="col-12">
     <nav class="navigation d-flex justify-content-center align-items-center">
-      <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/history"></fa-icon>
+      <fa-icon [icon]="['fas', 'circle-left']" class="fa-2x mx-3" routerLink="/builder/background"></fa-icon>
       <fa-icon [icon]="['fas', 'circle-right']" class="fa-2x mx-3" routerLink="/builder/race"></fa-icon>
     </nav>
   </div>
@@ -38,36 +38,54 @@
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('force')">-</button></td>
         <td>{{characteristics['force']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('force')">+</button></td>
+        @if(builderService.race.strenghtBonus > 0) {
+          <td>+{{builderService.race.strenghtBonus}}</td>
+        }
       </tr>
       <tr>
         <td>Dextérité</td>
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('dexterite')">-</button></td>
         <td>{{characteristics['dexterite']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('dexterite')">+</button></td>
+        @if(builderService.race.dexterityBonus > 0) {
+          <td>+{{builderService.race.dexterityBonus}}</td>
+        }
       </tr>
       <tr>
         <td>Constitution</td>
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('constitution')">-</button></td>
         <td>{{characteristics['constitution']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('constitution')">+</button></td>
+        @if(builderService.race.constitutionBonus > 0) {
+          <td>+{{builderService.race.constitutionBonus}}</td>
+        }
       </tr>
       <tr>
         <td>Intelligence</td>
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('intelligence')">-</button></td>
         <td>{{characteristics['intelligence']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('intelligence')">+</button></td>
+        @if(builderService.race.intelligenceBonus > 0) {
+          <td>+{{builderService.race.intelligenceBonus}}</td>
+        }
       </tr>
       <tr>
         <td>Sagesse</td>
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('sagesse')">-</button></td>
         <td>{{characteristics['sagesse']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('sagesse')">+</button></td>
+        @if(builderService.race.wisdomBonus > 0) {
+          <td>+{{builderService.race.wisdomBonus}}</td>
+        }
       </tr>
       <tr>
         <td>Charisme</td>
         <td><button class="btn btn-primary btn-sm" (click)="diminuer('charisme')">-</button></td>
         <td>{{characteristics['charisme']}}</td>
         <td><button class="btn btn-primary btn-sm" (click)="augmenter('charisme')">+</button></td>
+        @if(builderService.race.charismasBonus > 0) {
+          <td>+{{builderService.race.charismasBonus}}</td>
+        }
       </tr>
     </table>
   </div>
