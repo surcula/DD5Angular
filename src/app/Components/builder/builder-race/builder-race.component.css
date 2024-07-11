@@ -78,3 +78,8 @@
 .my-icon {
   color: rgb(144, 24, 24);
 }
+.sourceDetail{
+  margin-top: 20px;
+  border-top: 1px dashed  #6c757d;
+  font-size: 13px;
+}

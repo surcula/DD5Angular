@@ -1,43 +1,30 @@
 <div class="container">
   <div class="row">
     <div class="col-2">
-      @if(builderService.race.race != undefined){
+      @if(builderService.race != undefined){
 
       <p><strong>Race : </strong>{{ builderService.race.race }}</p>
       } 
-      @if(builderService.class.class != undefined){
+      @if(builderService.class != undefined){
 
       <p><strong>Class : </strong>{{ builderService.class.class }}</p>
       } 
-      @if(builderService.background.background != undefined){
+      @if(builderService.background != undefined){
 
       <p>
         <strong>Background : </strong>{{ builderService.background.background }}
       </p>
-      }
+      } 
       @if(builderService.strenght != 0){
-        <div class="carcsService">
-
-            <p>
-              <strong>Force : </strong>{{ builderService.strenght }}
-            </p>
-            <p>
-                <strong>Dextérité : </strong>{{ builderService.dexterity }}
-              </p>
-              <p>
-                <strong>Consitution : </strong>{{ builderService.constitution }}
-              </p>
-              <p>
-                <strong>Intelligence : </strong>{{ builderService.intelligence }}
-              </p>
-              <p>
-                <strong>Sagesse : </strong>{{ builderService.wisdom }}
-              </p>
-              <p>
-                <strong>Charisme : </strong>{{ builderService.charisma }}
-              </p>
-        </div>
-        }
+      <div class="carcsService">
+        <p><strong>Force : </strong>{{ builderService.strenght }}</p>
+        <p><strong>Dextérité : </strong>{{ builderService.dexterity }}</p>
+        <p><strong>Consitution : </strong>{{ builderService.constitution }}</p>
+        <p><strong>Intelligence : </strong>{{ builderService.intelligence }}</p>
+        <p><strong>Sagesse : </strong>{{ builderService.wisdom }}</p>
+        <p><strong>Charisme : </strong>{{ builderService.charisma }}</p>
+      </div>
+      }
     </div>
     <div class="col-10">
       <router-outlet></router-outlet>

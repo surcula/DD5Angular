@@ -23,7 +23,7 @@
     @if(IsLoaded) { @for(entity of listBackground; track $index) {
     <div class="caracteristique">
       <h3
-        [class.selected]="entity.backgrounds === backgroundFocus"
+        [class.selected]="entity.backgrounds.background === backgroundFocus.background"
         (click)="select(entity.backgrounds, entity.skillsBackground)"
       >
         {{ entity.backgrounds.background }}
@@ -37,7 +37,7 @@
     }
   </div>
   <div class="classSelected col-5">
-    @if(backgroundFocus != undefined) {
+    @if(backgroundFocus.background != undefined) {
     <h3>{{ backgroundFocus.background }}</h3>
     <p><strong>Capacité : </strong> {{ backgroundFocus.feature }}({{backgroundFocus.featureDescription}})</p>
     <p><strong>Choix de langues : </strong> {{ backgroundFocus.languageNumber }}</p>
@@ -51,7 +51,7 @@
       
       }
 
-      <p>{{ backgroundFocus.source.source }}</p>
+      <p class="sourceDetail">{{ backgroundFocus.source.source }}</p>
     
     } }
   </div>

@@ -25,14 +25,13 @@ export class BuilderCaracsComponent {
         this.dice[i].push(Math.floor(Math.random() * (6 - 1 + 1)) + 1);
       }
     }
-    if(this.builderService.strenght > 0){
-      this.characteristics['force'] =  this.builderService.strenght;
+    if (this.builderService.strenght > 0) {
+      this.characteristics['force'] = this.builderService.strenght;
       this.characteristics['dexterite'] = this.builderService.dexterity;
       this.characteristics['intelligence'] = this.builderService.intelligence;
       this.characteristics['constitution'] = this.builderService.constitution;
       this.characteristics['sagesse'] = this.builderService.wisdom;
       this.characteristics['charisme'] = this.builderService.charisma;
-      
     }
   }
   diminuer(carac: keyof typeof this.characteristics) {
@@ -57,11 +56,11 @@ export class BuilderCaracsComponent {
     }
   }
 
-  getSum(row:number[]){
+  getSum(row: number[]) {
     return row
-              .sort((a,b) => b -a)
-              .slice(0,3)
-              .reduce((sum , value) => sum + value, 0);
+      .sort((a, b) => b - a)
+      .slice(0, 3)
+      .reduce((sum, value) => sum + value, 0);
   }
 
   getTotal(carac: keyof typeof this.characteristics): number {
@@ -86,16 +85,15 @@ export class BuilderCaracsComponent {
         bonus = this.builderService.race.charismasBonus;
         break;
     }
-    let total : number = this.characteristics[carac]; 
-    return total + bonus
+    let total: number = this.characteristics[carac];
+    return +(total) + (+bonus);
   }
-  addCaracs(){
+  addCaracs() {
     this.builderService.strenght = this.characteristics['force'];
     this.builderService.dexterity = this.characteristics['dexterite'];
     this.builderService.intelligence = this.characteristics['intelligence'];
     this.builderService.constitution = this.characteristics['constitution'];
     this.builderService.wisdom = this.characteristics['sagesse'];
     this.builderService.charisma = this.characteristics['charisme'];
-
   }
 }

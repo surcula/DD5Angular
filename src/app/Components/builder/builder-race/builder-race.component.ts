@@ -6,16 +6,15 @@ import { BuilderCharacterService } from '../../../Services/builderCharacter.serv
 @Component({
   selector: 'app-builder-race',
   templateUrl: './builder-race.component.html',
-  styleUrl: './builder-race.component.css'
-
+  styleUrl: './builder-race.component.css',
 })
 export class BuilderRaceComponent {
-  raceFocus!: Races  ;
+  raceFocus!: Races;
   listRaces: ListRaces[] = [];
   IsLoaded: boolean = false;
   constructor(
     private racesService: RacesService,
-    private builderService : BuilderCharacterService
+    private builderService: BuilderCharacterService
   ) {
     this.load();
   }
@@ -24,16 +23,16 @@ export class BuilderRaceComponent {
     this.loadRaces();
   }
 
-
   private loadRaces() {
     this.racesService.GetAll().subscribe({
       next: (data: any) => {
         this.listRaces = data;
-        this.raceFocus = this.listRaces[0].race
-        this.checkIfLoaded();
-        if(this.builderService.race != undefined){
-          this.raceFocus = this.builderService.race
+        this.raceFocus = this.listRaces[0].race;
+        this.raceFocus.source = this.listRaces[0].race.source;
+        if (this.builderService.race != undefined) {
+          this.raceFocus = this.builderService.race;
         }
+        this.checkIfLoaded();
       },
       error: (error) => {
         console.log(error);
@@ -43,7 +42,7 @@ export class BuilderRaceComponent {
   }
 
   private checkIfLoaded() {
-    if (this.listRaces.length > 0) {
+    if (this.listRaces.length > 0 && this.raceFocus != undefined) {
       this.IsLoaded = true;
     }
   }
@@ -55,7 +54,7 @@ export class BuilderRaceComponent {
     this.raceFocus = race;
     this.raceFocus.langue = langues;
   }
-  addBuilderService(){
+  addBuilderService() {
     this.builderService.addRace(this.raceFocus);
   }
 }

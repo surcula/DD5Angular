@@ -12,13 +12,15 @@ import { BuilderCharacterService } from '../../Services/builderCharacter.service
   styleUrls: ['./builder.component.css'],
 })
 export class BuilderComponent {
-  
-  
   /**
    *
    */
-  constructor(public builderService : BuilderCharacterService) {
-   
-    
+  constructor(public builderService: BuilderCharacterService) {}
+  ngOnInit(): void {
+    this.builderService.reset();
+  }
+
+  ngOnDestroy(): void {
+    this.builderService.reset();
   }
 }

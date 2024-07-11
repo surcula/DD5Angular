@@ -10,8 +10,8 @@ import { BuilderCharacterService } from '../../../Services/builderCharacter.serv
   styleUrl: './builder-background.component.css',
 })
 export class BuilderBackgroundComponent {
-  backgroundFocus!: Backgrounds;
-  listBackground: listBackgrounds[] = [];
+  backgroundFocus: Backgrounds = {} as Backgrounds;
+  listBackground: listBackgrounds[];
   IsLoaded: boolean = false;
   constructor(
     private backgroundService: BackgroundService,
@@ -22,6 +22,7 @@ export class BuilderBackgroundComponent {
 
   public load() {
     this.loadRaces();
+    
   }
 
   private loadRaces() {
@@ -31,6 +32,10 @@ export class BuilderBackgroundComponent {
         this.checkIfLoaded();
         this.backgroundFocus = this.listBackground[0].backgrounds
         this.backgroundFocus.skillsBackground = this.listBackground[0].skillsBackground
+        if(this.builderService.background != undefined){
+          this.backgroundFocus = this.builderService.background
+          this.backgroundFocus.skillsBackground = this.builderService.background.skillsBackground
+        }
         
       },
       error: (error) => {

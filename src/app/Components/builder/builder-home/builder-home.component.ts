@@ -7,22 +7,19 @@ import { BuilderCharacterService } from '../../../Services/builderCharacter.serv
   templateUrl: './builder-home.component.html',
   styleUrl: './builder-home.component.css',
 })
-export class BuilderHomeComponent implements OnDestroy, OnInit {
-
+export class BuilderHomeComponent {
   constructor(
     private router: Router,
-    private builderService : BuilderCharacterService
+    private builderService: BuilderCharacterService
   ) {}
 
+  // ngOnInit(): void {
+  //   this.builderService.reset();
+  // }
 
-  ngOnInit(): void {
-    this.builderService.reset();
-  }
-
-
-  ngOnDestroy(): void {
-    this.builderService.reset();
-  }
+  // ngOnDestroy(): void {
+  //   this.builderService.reset();
+  // }
 
   navigateToRace() {
     this.router.navigate(['race']);

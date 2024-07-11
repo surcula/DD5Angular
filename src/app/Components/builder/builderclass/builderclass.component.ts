@@ -18,7 +18,7 @@ export class BuilderclassComponent {
     private ClassesService: ClassesService,
     public buildService: BuilderCharacterService
   ) {
-    this.classFocus.skills = []
+    this.classFocus.skills = [];
     this.load();
   }
 
@@ -33,7 +33,7 @@ export class BuilderclassComponent {
         this.classFocus = this.listClass[0].classes;
         this.classFocus.skills = this.listClass[0].skills;
         this.checkIfLoaded();
-        if (this.buildService.class.class != undefined) {
+        if (this.buildService.class != undefined) {
           this.classFocus = this.buildService.class;
           this.classFocus.skills = this.buildService.class.skills;
         }

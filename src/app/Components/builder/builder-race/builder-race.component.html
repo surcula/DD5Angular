@@ -23,7 +23,7 @@
     @if(IsLoaded){ @for(entity of listRaces;track $index){
     <div class="caracteristique">
       <h3
-        [class.selected]="entity.race === raceFocus"
+        [class.selected]="entity.race.race === raceFocus.race"
         (click)="select(entity.race, entity.languages)"
       >
         {{ entity.race.race }}
@@ -36,7 +36,7 @@
     </p>
     }
   </div>
-  <div *ngIf="raceFocus">
+  <div *ngIf="raceFocus != undefined">
     <h3>{{ raceFocus.race }}</h3>
     <div class="details">
       <p *ngIf="raceFocus.strenghtBonus > 0">
@@ -66,8 +66,8 @@
       <p *ngFor="let langue of raceFocus.langue">
         <strong>Langue :</strong> {{ langue.language }}
       </p>
-      <p *ngIf="raceFocus.source">
-        <strong>Source :</strong> {{ raceFocus.source.source }}
+      <p *ngIf="raceFocus.source" class="sourceDetail">
+        {{ raceFocus.source.source }}
       </p>
     </div>
   </div>

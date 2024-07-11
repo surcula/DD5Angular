@@ -7,16 +7,15 @@ import { Skill } from '../Models/Skill';
 import { Feats } from '../Models/Feats';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class BuilderCharacterService {
-
-  race: Races = {} as Races;
-  class: Classes = {} as Classes;
-  background: Backgrounds = {} as Backgrounds;
-  language: Language = {} as Language;
-  skill: Skill = {} as Skill;
-  feat: Feats = {} as Feats;
+  race!: Races | undefined;
+  class: Classes | undefined;
+  background: Backgrounds | undefined;
+  language: Language |undefined;
+  skill: Skill |undefined;
+  feat: Feats | undefined;
   strenght!: number;
   dexterity!: number;
   constitution!: number;
@@ -24,8 +23,7 @@ export class BuilderCharacterService {
   intelligence!: number;
   charisma!: number;
 
-  constructor() {
-   }
+  constructor() {}
 
   addRace(race: Races): void {
     this.race = race;
@@ -62,19 +60,18 @@ export class BuilderCharacterService {
     };
   }
 
-  reset(){
-    this.race = {} as Races
-this.class = {} as Classes
-this.background = {} as Backgrounds
-this.language = {} as Language;
-  this.skill = {} as Skill;
-  this.feat = {} as Feats;
-  this.strenght = 0;
-  this.dexterity = 0;
-  this.constitution = 0;
-  this.wisdom = 0;
-  this.intelligence = 0;
-  this.charisma = 0;
+  reset() {
+    this.race = undefined;
+    this.class = undefined;
+    this.background = undefined;
+    this.language = undefined;
+    this.skill = undefined;
+    this.feat = undefined;
+    this.strenght = 0;
+    this.dexterity = 0;
+    this.constitution = 0;
+    this.wisdom = 0;
+    this.intelligence = 0;
+    this.charisma = 0;
   }
-
 }
