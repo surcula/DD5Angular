@@ -1,0 +1,108 @@
+.right-image {
+    float: right; /* Positionne l'image à droite du texte */
+    margin: 0 0 1em 1em; /* Ajoute de l'espace autour de l'image */
+  }
+  
+  .paragraphe-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  
+  .paragraphe-container > p,
+  .paragraphe-container > div {
+    width: 48%; /* Adjust the width as needed */
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: "Cinzel", serif;
+    margin-right: 20px; /* Pour éviter que le contenu touche le bord droit */
+  }
+  
+  .sousTitre {
+    color: rgb(128, 29, 29);
+  }
+  
+  p {
+    text-align: justify;
+  }
+  
+  .parchemin-box {
+    border: 2px solid #8b4513; /* Bordure couleur marron */
+    background-color: #f4e3c1; /* Couleur parchemin clair pour le fond */
+    padding: 20px; /* Espacement à l'intérieur de la boîte */
+    border-radius: 15px; /* Bords arrondis */
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner du relief */
+    font-family: "Georgia", serif; /* Police avec une apparence ancienne */
+    color: #4b3a27; /* Couleur de texte marron foncé */
+    line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+    margin: 20px 0; /* Espacement extérieur pour séparer les éléments */
+    position: relative; /* Position relative pour les effets de pseudo-éléments */
+  }
+  
+  .parchemin-box:before,
+  .parchemin-box:after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 2px solid #8b4513;
+    border-radius: 15px;
+    top: 5px;
+    left: 5px;
+    z-index: -1;
+    background-color: #f4e3c1;
+  }
+  
+  .parchemin-box:after {
+    top: -5px;
+    left: -5px;
+  }
+  .caracteristiques-container {
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* Trois colonnes égales par défaut */
+  
+    /* Ajout de Media Queries pour ajuster le nombre de colonnes en fonction de la largeur de l'écran */
+    @media (max-width: 1200px) {
+      grid-template-columns: repeat(
+        2,
+        1fr
+      ); /* Passer à deux colonnes à partir de 1200px de largeur */
+    }
+  
+    @media (max-width: 800px) {
+      grid-template-columns: repeat(
+        1,
+        1fr
+      ); /* Passer à une colonne à partir de 800px de largeur */
+    }
+  }
+  
+  .caracteristique {
+    background-color: #f4f4f4;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px; /* Espacement entre les caractéristiques */
+  }
+  
+  .caracteristique h3 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: #333;
+  }
+  
+  .details p {
+    margin: 5px 0;
+  }
+  
+  .details p strong {
+    font-weight: bold;
+  }
+  
+  .details p:last-child {
+    margin-bottom: 0;
+  }
+  

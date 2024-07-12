@@ -1,4 +1,14 @@
-/* Styles for the container */
+/* Pour masquer les flèches dans les champs de type number */
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
 .containerFilter {
   display: flex;
   flex-wrap: wrap;
@@ -9,9 +19,9 @@
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-/* Styles for the filter list container */
+/* Styles pour le conteneur de la liste des filtres */
 .filter-list-container {
-  flex: 1 1 300px; /* Flexible width, minimum width 300px */
+  flex: 1 1 300px; /* Largeur flexible, largeur minimale de 300px */
 }
 
 .filter-list-container label {
@@ -25,7 +35,7 @@
   transform: translateY(2px);
 }
 
-/* Styles for the level filter */
+/* Styles pour le filtre de niveau */
 .level-filter {
   display: flex;
   align-items: center;
@@ -59,7 +69,7 @@
   background-color: #0056b3;
 }
 
-/* Styles for the table */
+/* Styles pour la table */
 .table {
   width: 100%;
   margin-top: 20px;
@@ -92,6 +102,9 @@
   background-color: #f9f9f9;
 }
 
-.table tbody tr:hover {
-  background-color: #f0f0f0;
+.tableRow:hover {
+  background-color: #eb2626;
+}
+.table tbody tr {
+  cursor: pointer; /* Change le curseur en pointeur (main) */
 }

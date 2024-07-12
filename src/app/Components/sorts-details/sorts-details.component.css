@@ -1,0 +1,56 @@
+.container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    background-color: #c2b99837;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .header {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .detail-item {
+    margin-bottom: 10px;
+  }
+  
+  .detail-item span {
+    font-weight: bold;
+  }
+  
+  .source-info {
+    margin-top: 20px;
+    padding: 10px;
+    border-top: 1px solid #ccc;
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .source-info span {
+    font-weight: bold;
+  }
+  
+  .description {
+    white-space: pre-wrap;
+    margin-bottom: 10px;
+    font-size: 20px;
+  }
+.colorSpan{
+    color: #c93c3c;
+}
+.link-to-spells {
+    display: block; /* Convertit le lien en bloc pour mieux le styliser */
+    margin-top: 20px; /* Ajoute une marge au-dessus du lien */
+    font-size: 16px; /* Taille de la police */
+    color: #007bff; /* Couleur du texte */
+    text-decoration: none; /* Supprime le soulignement par défaut */
+  }
+  
+  .link-to-spells:hover {
+    text-decoration: underline; /* Soulignement au survol */
+  }

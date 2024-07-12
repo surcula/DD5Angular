@@ -28,7 +28,7 @@ import { HomeComponent } from './Components/home/home.component';
 import { CarousselComponent } from './Components/home/caroussel/caroussel.component';
 import { NavbaraideComponent } from './Components/aide-de-jeu/navbaraide/navbaraide.component';
 import { NavbarreglesComponent } from './Components/regles/navbarregles/navbarregles.component';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CreationComponent } from './Components/regles/creation/creation.component';
 import { BuilderHomeComponent } from './Components/builder/builder-home/builder-home.component';
@@ -47,6 +47,42 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { BuilderCaracsComponent } from './Components/builder/builder-caracs/builder-caracs.component';
 import { BuilderBackgroundComponent } from './Components/builder/builder-background/builder-background.component';
+import { BuilderInfosComponent } from './Components/builder-infos/builder-infos.component';
+import { BuilderInventoryComponent } from './Components/builder-inventory/builder-inventory.component';
+import { RecapComponent } from './Components/builder/recap/recap.component';
+import { FeuillesComponent } from './Components/builder/feuilles/feuilles.component';
+import { HistoireComponent } from './Components/univers/histoire/histoire.component';
+import { RoyaumeOubliesComponent } from './Components/univers/royaume-oublies/royaume-oublies.component';
+import { ProvinceDeLaelithComponent } from './Components/univers/province-de-laelith/province-de-laelith.component';
+import { OrganisationsComponent } from './Components/univers/organisations/organisations.component';
+import { CultureDrakeidComponent } from './Components/univers/culture-drakeid/culture-drakeid.component';
+import { CultureDrowComponent } from './Components/univers/culture-drow/culture-drow.component';
+import { CultureElfiqueComponent } from './Components/univers/culture-elfique/culture-elfique.component';
+import { CultureGnomeComponent } from './Components/univers/culture-gnome/culture-gnome.component';
+import { CultureHalfelineComponent } from './Components/univers/culture-halfeline/culture-halfeline.component';
+import { CultureNaineComponent } from './Components/univers/culture-naine/culture-naine.component';
+import { DragonsComponent } from './Components/univers/dragons/dragons.component';
+import { GnollsComponent } from './Components/univers/gnolls/gnolls.component';
+import { GobelinsComponent } from './Components/univers/gobelins/gobelins.component';
+import { HobgobelinsComponent } from './Components/univers/hobgobelins/hobgobelins.component';
+import { KenkuComponent } from './Components/univers/kenku/kenku.component';
+import { KoboldsComponent } from './Components/univers/kobolds/kobolds.component';
+import { OrcsComponent } from './Components/univers/orcs/orcs.component';
+import { TabaxisComponent } from './Components/univers/tabaxis/tabaxis.component';
+import { Error404Component } from './Components/error404/error404.component';
+import { LaelithComponent } from './Components/univers/laelith/laelith.component';
+import { HistoriquesComponent } from './Components/regles/historiques/historiques.component';
+import { PersonnalisationComponent } from './Components/regles/personnalisation/personnalisation.component';
+import { CaracteristiquesComponent } from './Components/regles/caracteristiques/caracteristiques.component';
+import { AventureComponent } from './Components/regles/aventure/aventure.component';
+import { CombatComponent } from './Components/regles/combat/combat.component';
+import { IncantationsComponent } from './Components/regles/incantations/incantations.component';
+import { EtatsComponent } from './Components/regles/etats/etats.component';
+import { TousLesMonstresComponent } from './Components/regles/tous-les-monstres/tous-les-monstres.component';
+import { TousLesObjetsMagiquesComponent } from './Components/regles/tous-les-objets-magiques/tous-les-objets-magiques.component';
+import { DicesComponent } from './Components/aide-de-jeu/dices/dices.component';
+import { SortsDetailsComponent } from './Components/sorts-details/sorts-details.component';
+import { ScrollTopInterceptor } from './Services/scroll-top.interceptor';
 
 @NgModule({
   declarations: [
@@ -78,6 +114,41 @@ import { BuilderBackgroundComponent } from './Components/builder/builder-backgro
     BuilderclassComponent,
     BuilderCaracsComponent,
     BuilderBackgroundComponent,
+    BuilderInfosComponent,
+    BuilderInventoryComponent,
+    RecapComponent,
+    FeuillesComponent,
+    HistoireComponent,
+    RoyaumeOubliesComponent,
+    ProvinceDeLaelithComponent,
+    OrganisationsComponent,
+    CultureDrakeidComponent,
+    CultureDrowComponent,
+    CultureElfiqueComponent,
+    CultureGnomeComponent,
+    CultureHalfelineComponent,
+    CultureNaineComponent,
+    DragonsComponent,
+    GnollsComponent,
+    GobelinsComponent,
+    HobgobelinsComponent,
+    KenkuComponent,
+    KoboldsComponent,
+    OrcsComponent,
+    TabaxisComponent,
+    Error404Component,
+    LaelithComponent,
+    HistoriquesComponent,
+    PersonnalisationComponent,
+    CaracteristiquesComponent,
+    AventureComponent,
+    CombatComponent,
+    IncantationsComponent,
+    EtatsComponent,
+    TousLesMonstresComponent,
+    TousLesObjetsMagiquesComponent,
+    DicesComponent,
+    SortsDetailsComponent,
   ],
   imports: [
     BrowserModule,
@@ -90,7 +161,7 @@ import { BuilderBackgroundComponent } from './Components/builder/builder-backgro
     FormsModule,
     FontAwesomeModule,
   ],
-  providers: [],
+  providers: [{ provide: HTTP_INTERCEPTORS, useClass: ScrollTopInterceptor, multi: true }],
   bootstrap: [AppComponent],
 })
 export class AppModule {

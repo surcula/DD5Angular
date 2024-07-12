@@ -1,6 +1,7 @@
-.card-img-top1 {
-  width: 50%;
-  height: auto; /* Conserve les proportions */
+.card-img-top {
+  
+  height: 300px; /* Hauteur fixe pour toutes les images */
+  object-fit: cover; /* Assure que l'image couvre la zone spécifiée */
 }
 .card-img-top2 {
   margin-top: 2em;

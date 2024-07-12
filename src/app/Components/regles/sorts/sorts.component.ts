@@ -114,4 +114,7 @@ export class SortsComponent {
     this.filteredSpells = this.listSpells;
     this.applyFilter();
   }
+  details(id:number){
+    this.router.navigate(["/regles/sortsDetails/",id]);
+  }
 }

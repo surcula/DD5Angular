@@ -1,0 +1,23 @@
+@if(spell != undefined){
+    <div class="container">
+        <div class="header">{{ spell.name }}</div>
+        <div class="detail-item"><span class="colorSpan">Niveau :</span> {{ spell.level }}</div>
+        <div class="detail-item"><span class="colorSpan">Ecole de magie :</span> {{ spell.school }}</div>
+        <div class="detail-item"><span class="colorSpan">Portée :</span> {{ spell.range }}</div>
+        <div class="detail-item"><span class="colorSpan">Composantes :</span> {{ spell.components }}</div>
+        <div class="detail-item"><span class="colorSpan">Temps d'incantation :</span> {{ spell.castingTime }}</div>
+        <div class="detail-item"><span class="colorSpan">Durée :</span> {{ spell.duration }}</div>
+        <div class="detail-item"><span class="colorSpan">Description :</span></div>
+        <div class="description">{{ spell.description }}</div>
+        <div class="detail-item" *ngIf="spell.higherLevel"><span class="colorSpan">Gain de niveaux:</span></div>
+        <div class="description">{{ spell.higherLevel }}</div>
+        <div class="source-info">
+          <span>Source:</span> {{ spell.source.source }}
+          <br>
+        </div>
+        <a class="link-to-spells" routerLink="/regles/sorts">Retourner à la liste des sorts</a>
+      </div>
+      
+}
+
+

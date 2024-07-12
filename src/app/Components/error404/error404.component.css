@@ -1,0 +1,15 @@
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: auto; 
+  overflow: hidden; 
+  margin: 0;
+  padding: 0;
+}
+
+.error-image {
+  max-width: 100%;
+  height: auto;
+}

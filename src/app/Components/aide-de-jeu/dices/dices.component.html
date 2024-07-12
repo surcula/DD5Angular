@@ -1,0 +1,36 @@
+<div class="dice-container">
+    <h2>Lancer de dés</h2>
+  
+    <label for="diceType">Type de dé :</label>
+    <select id="diceType" name="diceType" [(ngModel)]="selectedDiceType">
+      <option value="d4">d4</option>
+      <option value="d6">d6</option>
+      <option value="d8">d8</option>
+      <option value="d10">d10</option>
+      <option value="d12">d12</option>
+      <option value="d20">d20</option>
+    </select>
+  
+    <label for="numberOfDice">Nombre de dés (1-10) :</label>
+    <input type="number" id="numberOfDice" name="numberOfDice" [(ngModel)]="numberOfDice" min="1" max="10">
+  
+    <br>
+  
+    <input type="checkbox" id="advantageCheckbox" [(ngModel)]="advantage" (change)="handleCheckboxChange()">
+    <label for="advantageCheckbox">Avantage</label>
+  
+    <input type="checkbox" id="disadvantageCheckbox" [(ngModel)]="disadvantage" (change)="handleCheckboxChange()">
+    <label for="disadvantageCheckbox">Désavantage</label>
+  
+    <button (click)="rollDice()">Lancer les dés</button>
+  
+    <div *ngIf="results.length > 0">
+      <div *ngFor="let result of results; let i = index" class="result" [class.highest]="isHighest(i)" [class.lowest]="isLowest(i)">
+        Résultat du {{ selectedDiceType }} : {{ result }}
+      </div>
+      <div class="total">
+        Total ({{ results.join(' + ') }}) = {{ sum }}
+      </div>
+    </div>
+  </div>
+  

@@ -1,1 +1,9 @@
-<p>navbaraide works!</p>
+<ul class="nav flex-column mw-25 mh-25">
+    @for ( univer of listAides; track $index) {
+    <li class="nav-item mw-25 mh-25">
+      <a class="nav-link active mw-25 mh-25" [routerLink]="univer.routerLink">{{
+        univer.label
+      }}</a>
+    </li>
+    }
+  </ul>

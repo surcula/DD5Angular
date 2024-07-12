@@ -1,0 +1,71 @@
+.right-image {
+  float: right; /* Positionne l'image à droite du texte */
+  margin: 0 0 1em 1em; /* Ajoute de l'espace autour de l'image */
+}
+
+.imgDragon{
+    max-width: 400px;
+    max-height: 400px;
+}
+
+.paragraphe-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.paragraphe-container > p,
+.paragraphe-container > div {
+  width: 48%; /* Adjust the width as needed */
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Cinzel", serif;
+  margin-right: 20px; /* Pour éviter que le contenu touche le bord droit */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cinzel", serif;
+}
+
+p {
+  text-align: justify;
+}
+
+.parchemin-box {
+  border: 2px solid #8b4513; /* Bordure couleur marron */
+  background-color: #f4e3c1; /* Couleur parchemin clair pour le fond */
+  padding: 20px; /* Espacement à l'intérieur de la boîte */
+  border-radius: 15px; /* Bords arrondis */
+  box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3); /* Ombre pour donner du relief */
+  font-family: "Georgia", serif; /* Police avec une apparence ancienne */
+  color: #4b3a27; /* Couleur de texte marron foncé */
+  line-height: 1.6; /* Hauteur de ligne pour une meilleure lisibilité */
+  margin: 20px 0; /* Espacement extérieur pour séparer les éléments */
+  position: relative; /* Position relative pour les effets de pseudo-éléments */
+}
+
+.parchemin-box:before,
+.parchemin-box:after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #8b4513;
+  border-radius: 15px;
+  top: 5px;
+  left: 5px;
+  z-index: -1;
+  background-color: #f4e3c1;
+}
+
+.parchemin-box:after {
+  top: -5px;
+  left: -5px;
+}

@@ -14,4 +14,11 @@ export class SpellsService {
   public GetAll(): Observable<Spells[]> {
     return this.client.get<Spells[]>(this.url);
   }
+
+  public GetById(id:string): Observable<Spells> {
+    return this.client.get<Spells>(this.url + "/" + id);
+  }
+
+
+
 }

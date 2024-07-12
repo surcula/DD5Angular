@@ -1,0 +1,81 @@
+.dice-container {
+    max-width: 400px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  select, input, button {
+    margin-bottom: 10px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+    color: #333;
+    width: calc(50% - 5px); /* Largeur égale pour les inputs */
+  }
+  
+  button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%; /* Largeur pleine pour le bouton */
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .checkbox-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .checkbox-container label {
+    flex: 1; /* Flexibilité égale pour les labels */
+    margin-right: 10px;
+  }
+  
+  .results-container {
+    margin-top: 20px;
+    text-align: left;
+  }
+  
+  .result {
+    margin-bottom: 5px;
+    padding: 8px;
+    background-color: #e9ecef;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .result.highest, .result.lowest {
+    color: red;
+    font-weight: bold;
+  }
+  
+  .total {
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
